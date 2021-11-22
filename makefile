@@ -1,8 +1,15 @@
+TAG ?= local
+test:
+	go test -v ./...
+	
 build:
 	go build
 
 run-binary:
 	./gogopower
 
-test:
-	go test -v ./...
+docker-build:
+	docker build -t ${TAG} .
+
+docker-run:
+	docker run -p 8080:8080 ${TAG}
