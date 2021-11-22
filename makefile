@@ -1,2 +1,5 @@
+build:
+	go build
+
 test:
-	go test -v
+	go test -v ./...
